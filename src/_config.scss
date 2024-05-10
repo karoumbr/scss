@@ -1,0 +1,18 @@
+$bg-primary-color:#ddeadf;
+$primary-color:white;
+$font-family: "Product Sans",Arial,sans-serif;
+$font-size: 2.5rem;
+//couleur du texte sera en fonction du couleur du background
+@function set-text-color($color){
+    @if(lightness($color) > 70){
+        @return #000;
+    }
+    @else{
+        @return #FFF;
+    }
+}
+//couleur background et texte
+@mixin set-background($color){
+    background-color: $color;
+    color: set-text-color($color);
+}
